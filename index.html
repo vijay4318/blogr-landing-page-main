@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"/>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+<title>Frontend Mentor | [Blogr]</title>
+<style>
+    :root{
+      --primary-color-red:rgb(255, 61, 84);
+      --primary-color-light-red:rgb(255, 143, 112);
+      --primary-font:'Ubuntu', sans-serif;
+      --secondary-font:'Overpass', sans-serif;
+    }
+
+    /***Primary Section*/
+    .intro-section{
+      background: var(--primary-color-red);
+      overflow: hidden;
+      position: relative;
+      border-bottom-left-radius: 90px;
+    }
+    .intro-section::before{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url(images/bg-pattern-intro.svg);
+      background-size: cover;
+      top: 0px;
+      right: 0px;
+      background-position: center;
+    }
+    .bg-dark{
+        background: transparent !important;
+    }
+
+    /**********Navigation Menu**********/
+    .navbar-expand-lg{
+        position: relative; 
+    }
+
+    /*Website 0r Brand name */
+    .navbar-brand{
+     padding-left: 200px;
+     font-size: 32px;
+     font-family: var(--primary-font);
+     font-weight: 700;
+     color: white;
+     line-height: 36px;
+     
+    }
+    /*Menu Links*/
+    .main-menu-section{
+    margin-left: 20px;
+    display: flex;
+  }
+
+  .nav-item .nav-link{
+      font-family: var(--primary-font);
+      font-weight: 500;
+      font-size: 16px;
+      color: white;
+      line-height: 28px;
+  } 
+    .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255,255, 0.99)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.dropdown-toggle::after{
+  color: var(--primary-color-red);
+}
+
+/*Toggling Icon on click*/
+.show > .dropdown-toggle:focus::after {
+  transform: rotateX(182deg);
+    transition: 0.2s ease-out;
+}
+
+/*User Login Button*/
+  .user-account{
+      
+      padding-left: 40%;
+  }
+
+  .user-account .btn-login{
+    font-family: var(--primary-font);
+      font-weight: 400;
+      font-size: 16px;
+      color: white;
+      line-height: 28px;
+  }
+  .user-account .btn-sign-up{
+    font-family: var(--primary-font);
+      font-weight: 500;
+      font-size: 16px;
+      color:var(--primary-color-red);
+      line-height: 28px;
+      padding: 5px 20px;
+      background: white;
+      border-radius: 80px;
+      vertical-align: center;
+      text-align: center;
+  }
+
+  /****Hero Intro*****/
+  .hero-intro{
+    text-align: center;
+    padding: 80px 30px;
+    z-index: 1;
+    position: relative;
+  }
+
+  .hero-intro .heading, .hero-intro .sub-content{
+    font-family: var(--primary-font);
+      color: white;
+  }
+  .hero-intro .heading{
+     font-size: 32px;
+     font-weight: 700;
+     line-height: 36px;
+     padding: 0px 0px 30px 0px;
+  }
+  .hero-intro .sub-content{
+    font-size: 16px;
+  }
+  /*Hero intro button*/
+  .intro-submit{
+    display: inline-flex;
+    justify-content: center;
+    padding-top: 30px;
+  }
+ 
+ .intro-submit .btn-start-free{
+  width: 150px;
+    background: white;
+    padding: 9px 10px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(255, 61, 84);
+    font-family: var(--secondary-font);
+ }
+
+ .intro-submit .btn-learn-more{
+    border: 2px solid white;
+    padding: 9px 10px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    font-family: var(--secondary-font);
+ }
+
+
+ /***********Designing the Future**********/
+.design-the-future{
+  padding-top: 130px ;
+  padding-bottom: 180px;
+    overflow-x: clip;
+}
+.design-the-future-heading{
+  font-family: var(--primary-font);
+      color: rgb(1, 0, 36);
+     font-size: 32px;
+     font-weight: 700;
+     line-height: 36px;
+     text-align: center;
+}
+
+.designing-future{
+  padding-top: 50px;
+  
+}
+/*Left side - Content */
+.content-management{
+  padding-top: 50px;
+}
+.extensible-editor h2, .content-management h2{
+  font-family: var(--primary-font);
+      color: rgb(1, 0, 36);
+     font-size: 24px;
+     font-weight: 500;
+     line-height: 36px;
+     text-align: left;
+}
+
+.extensible-editor p, .content-management p{
+  font-family: var(--primary-font);
+  font-size: 16px;
+  color: rgb(51, 51, 51);
+}
+
+/*Right side image*/
+.designing-future-image img:first-child {
+    display: block;
+    width: 600px;
+    height: 563px;
+    position: absolute;
+    top: -91px;
+    right: -204px;
+}
+.designing-future-image .mobile{
+  display: none;
+
+}
+
+/************Art Infrastructure Section **************/
+.art-infrastructure {
+  position: relative;
+  padding-top: 103px;
+  padding-right: 0;
+  margin-right: -15px;
+  overflow: hidden;
+}
+.art-infrastructure .container-fluid{
+  padding-right: 0;
+  margin-right: 0px;
+}
+.infrastructure-section{
+  width: 100%;
+  height: 430px;
+  background: hsl(207, 13%, 34%);
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+.infrastructure-image img{
+  height: 90%;
+  width: 90%;
+  position: relative;
+  top: -70px;
+  left: 130px;
+}
+.infrastructure-image::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(images/bg-pattern-circles.svg);
+  background-size: cover;
+  background-origin: center;
+  top: -100px;
+ 
+}
+
+.infrastructure-content{
+  padding: 30px;
+}
+.infrastructure-content h3{
+  font-family: var(--primary-font);
+      color: rgb(255, 255, 255);
+     font-size: 24px;
+     font-weight: 500;
+     line-height: 36px;
+     text-align: left;
+     padding-top: 80px;
+}
+
+.infrastructure-content p{
+  font-family: var(--primary-font);
+  font-size: 16px;
+  color: rgb(255, 254, 254);
+  padding-top: 30px;
+  padding-right: 20%;
+}
+
+/*BENEFITS*/
+.our-benefits{
+  padding-top: 130px ;
+
+}
+
+.benefits{
+  padding-top: 50px;
+}
+/*Right side - Content */
+.tooling{
+  padding-top: 50px;
+}
+.simple-content h2, .tooling h2{
+  font-family: var(--primary-font);
+      color: rgb(1, 0, 36);
+     font-size: 24px;
+     font-weight: 500;
+     line-height: 36px;
+     text-align: left;
+}
+
+.simple-content p, .tooling p{
+  font-family: var(--primary-font);
+  font-size: 16px;
+  color: rgb(51, 51, 51);
+}
+
+/*Left side image*/
+.benefits-image img:first-child {
+    display: block;
+    width: 600px;
+    height: 500px;
+    position: absolute;
+    top: -91px;
+    left: -183px;
+}
+.benefits-image .mobile{
+  display: none;
+
+}
+/*----------FOOTER---------------*/
+.footer{
+  background:hsl(240, 10%, 16%);
+  color: white;
+  border-top-right-radius: 40px;
+  margin-top: 50px;
+}
+.footer-inner{
+  padding-top: 70px;
+  
+  padding-bottom: 30px;
+}
+
+.footer-points li{
+  list-style-type: none;
+  text-align: left;
+  margin-left: -40px;
+  
+}
+/*********MOBILE DEVICE BELOW 600PX*********/
+@media screen and (max-width:600px){
+
+  /*intro Section*/
+  .intro-section{
+    border-bottom-left-radius: 90px;
+  }
+  .intro-section::before {
+    content: "";
+    position: absolute;
+    width: 113%;
+    height: 160%;
+    background: url(images/bg-pattern-intro.svg);
+    background-size: cover;
+    top: -169px;
+    right: -85px;
+    background-position: top;
+}
+
+  /*navbar*/
+    .navbar-collapse {
+    align-items: center;
+    text-align: center;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 3px 19px 48px 9px #25242480;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*Adjusting Brand Name*/
+.navbar-brand{
+     padding-left: 10%;
+     }
+     
+     
+  /*Drop down Menu*/
+  .navbar-nav .dropdown-menu {
+    position: static;
+    float: none;
+    padding: 10px 40px;
+    text-align: center;
+    border-radius: 10px;
+    background: #efebeb5c;
+    box-shadow: 1px 1px 22px 5px #716d6d29;
+    transition: all 0.2s ease-out;
+}
+.dropdown-item{
+    font-size: 16px;
+    line-height: 29px;
+}
+
+.nav-item .nav-link{
+    color: black;
+    line-height: 28px;
+}
+/*User login in menu*/
+.user-account{
+      padding-left: 0%;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      border-top: 1px solid grey;
+    width: 90%;
+  }
+  
+  .user-account .btn-sign-up{
+      color: rgb(255, 255, 255);
+      background: linear-gradient( 90deg , var(--primary-color-light-red) 0%, var(--primary-color-red) 100%);
+      position: relative;
+    margin-left: 24%;
+    width: 48%;
+  }
+  .user-account .btn-login {
+    color: black;
+    text-align: center;
+    font-weight: 700;
+    font-family: var(--primary-font);
+    
+}
+/*Intro Button*/
+.intro-submit .btn-learn-more{
+  margin-top: 20px;
+}
+
+
+ /***********Designing the Future**********/
+ 
+.design-the-future-heading{
+  font-family: var(--primary-font);
+      color: rgb(1, 0, 36);
+     font-size: 32px;
+     font-weight: 700;
+     line-height: 36px;
+     text-align: center;
+}
+
+.designing-future{
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+/*Left side - Content */
+.content-management{
+  padding-top: 50px;
+}
+.extensible-editor h2, .content-management h2{
+  font-family: var(--primary-font);
+      color: rgb(1, 0, 36);
+     font-size: 24px;
+     font-weight: 500;
+     line-height: 36px;
+     text-align: center;
+}
+
+.extensible-editor p, .content-management p{
+  font-family: var(--primary-font);
+  font-size: 16px;
+  color: rgb(51, 51, 51);
+  text-align: center;
+}
+
+/*Right side image*/
+.designing-future-image img:first-child {
+   display: none;
+}
+.designing-future-image .mobile{
+  display: block;
+  width: 340px;
+    height: 290px;
+    padding-bottom: 30px;
+
+}
+
+/************Art Infrastructure Section **************/
+.art-infrastructure {
+  position: relative;
+    padding-top: 100px;
+    padding-right: 0px;
+    margin-right: -15px;
+  
+}
+.art-infrastructure .container-fluid{
+  padding-right: 0;
+  margin-right: 0px;
+}
+.infrastructure-section{
+  width: 100%;
+  height: 100%;
+  background: hsl(207, 13%, 34%);
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+.infrastructure-image img{
+  height: 90%;
+  width: 90%;
+  position: relative;
+  top: -70px;
+  left: 0px !important;
+  text-align: center;
+}
+.infrastructure-image::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(images/bg-pattern-circles.svg);
+  background-size: cover;
+  background-origin: center;
+  top: -100px;
+  left: 0px;
+ 
+}
+
+.infrastructure-content{
+margin-top: -100px;
+text-align: center;
+}
+.infrastructure-content h3{
+  font-family: var(--primary-font);
+      color: rgb(255, 255, 255);
+     font-size: 24px;
+     font-weight: 500;
+     line-height: 36px;
+     text-align: left;
+     padding-top: 0 !important;
+     text-align: center;
+}
+
+.infrastructure-content p{
+  font-family: var(--primary-font);
+  font-size: 16px;
+  color: rgb(255, 254, 254);
+  padding-top: 30px;
+  text-align: center;
+  padding: 1px 2px;
+}
+/*BENEFITS*/
+.our-benefits{
+  padding-top: 130px ;
+
+}
+
+.benefits{
+  padding-top: 50px;
+}
+/*Right side - Content */
+.tooling{
+  padding-top: 50px;
+}
+.simple-content h2, .tooling h2{
+  font-family: var(--primary-font);
+      color: rgb(1, 0, 36);
+     font-size: 24px;
+     font-weight: 500;
+     line-height: 36px;
+     text-align: center;
+}
+
+.simple-content p, .tooling p{
+  font-family: var(--primary-font);
+  font-size: 16px;
+  color: rgb(51, 51, 51);
+  text-align: center;
+}
+
+/*Left side image*/
+.benefits-image img:first-child {
+    display: none;
+    
+}
+.benefits-image .mobile{
+  display: flex;
+    width: 340px;
+    height: 290px;
+    padding-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 2%;
+
+
+}
+
+/*----------FOOTER---------------*/
+.footer{
+  background:hsl(240, 10%, 16%);
+  color: white;
+  border-top-right-radius: 40px;
+  margin-top: 50px;
+  text-align: center;
+}
+.brand-name{
+  padding-bottom: 70px;
+}
+.footer-inner{
+  padding-top: 70px;
+  padding-bottom: 30px;
+}
+.row1 h2{
+  padding-bottom: 10px;
+}
+.footer-points li{
+  list-style-type: none;
+  text-align: center;
+  margin-left: -40px;
+  font-family: var(--primary-font);
+  font-size: 16px;
+  padding-top: 5px;
+}
+}
+
+</style>
+</head>
+<body>
+  <section class="intro-section">
+      <nav class="navbar navbar-expand-lg bg-dark">
+          <a href="#" class="navbar-brand">Blogr</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse main-menu-section navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav main-menu">
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Product
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a href="#" class="dropdown-item">OverView</a>
+                        <a href="#" class="dropdown-item">Pricing</a>
+                        <a href="#" class="dropdown-item">Marketplace</a>
+                        <a href="#" class="dropdown-item">Features</a>
+                        <a href="#" class="dropdown-item">Integrations</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Company
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a href="#" class="dropdown-item">About</a>
+                        <a href="#" class="dropdown-item">Team</a>
+                        <a href="#" class="dropdown-item">Blog</a>
+                        <a href="#" class="dropdown-item">Careers</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Connect
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a href="#" class="dropdown-item">Contact</a>
+                        <a href="#" class="dropdown-item">Newsletter</a>
+                        <a href="#" class="dropdown-item">Linkedin</a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="my-2 my-lg-2 user-account">
+                <a href="#" class="btn mr-3 btn-login">Login</a>
+                <a href="#" class="btn btn-sign-up">Sign Up</a>
+            </ul>
+        </div>  
+      </nav>
+
+      <div class="hero-intro container">
+          <div class="heading">
+              <h2>A modern publishing platform</h2>
+          </div>
+          <div class="sub-content">
+            <p>Grow your audience and build your online brand</p>
+          </div>
+          <div class="row intro-submit">
+            <div class="col-sm col-md start-free">
+              <a href="#" class="btn btn-start-free">Start for Free</a>
+            </div>
+            <div class="col-sm col-md learn-more">
+              <a href="#" class="btn btn-learn-more">Learn More</a>
+            </div>
+          </div>
+      </div>
+  </section>  
+
+  <section class="design-the-future">
+    <div class="container">
+      <h2 class="design-the-future-heading">Designed for the future</h2>
+      <div class="row designing-future">
+        <div class="col-sm col-md designing-future-content">
+           <div class="extensible-editor">
+             <h2>Introducing an extensible editor</h2>
+             <p>Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. 
+              The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, 
+              videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or 
+              change the looks of a blog.</p>
+           </div>
+           <div class="content-management">
+            <h2>Robust content management</h2>
+            <p>Flexible content management enables users to easily move through posts. Increase the usability of your blog 
+              by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.
+            </p>
+           </div>
+        </div>
+        <div class="col-sm col-md designing-future-image">
+            <img src="images/illustration-editor-desktop.svg" alt="" class="desktop">
+            <img src="images/illustration-editor-mobile.svg" alt="" class="mobile">
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="art-infrastructure">
+  <div class="container-fluid">
+    <div class="row infrastructure-section">
+      <div class="background-image"></div>
+      <div class="col-sm col-md infrastructure-image">
+         <img src="images/illustration-phones.svg" alt="" class="mobile">
+      </div>
+      <div class="col-sm col-md infrastructure-content">
+        <h3>
+          State of the Art Infrastructure
+        </h3>
+        <p>
+          With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. 
+          This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="our-benefits">
+  <div class="container">
+    <div class="row benefits">
+      <div class="col-sm col-md benefits-image">
+        <img src="images/illustration-laptop-desktop.svg" alt="" class="desktop">
+        <img src="images/illustration-laptop-mobile.svg" alt="" class="mobile">
+    </div>
+      <div class="col-sm col-md benefits-content">
+         <div class="simple-content">
+           <h2>Free, open, simple</h2>
+           <p>Blogr is a free and open source application backed by a large community of helpful developers. It supports 
+            features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, 
+            and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.</p>
+         </div>
+         <div class="tooling">
+          <h2>Powerful tooling</h2>
+          <p>Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but
+            capable of producing even the most complicated sites.
+          </p>
+         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="footer">
+  <div class="container">
+    <div class="row footer-inner">
+      <div class="col-sm col-md row1 brand-name">
+        <h2>
+          Blogr
+        </h2>
+      </div>
+      <div class="col-sm col-md row1">
+        <h2>
+          Product
+        </h2>
+        <ul class="footer-points">
+          <li>Overview</li>
+          <li>Pricing</li>
+          <li> Marketplace</li>
+          <li>Features</li>
+          <li>Integrations</li>
+        </ul>
+      </div>
+      <div class="col-sm col-md row1">
+        <h2>
+          Company
+        </h2>
+        <ul class="footer-points">
+          <li>About</li>
+          <li>Team</li>
+          <li>Blog</li>
+          <li>Careers</li>
+      </div>
+      <div class="col-sm col-md row1">
+        <h2>
+          Connect
+        </h2>
+        <ul class="footer-points">
+          <li>Contact</li>
+          <li>Newsletter</li>
+          <li>LinkedIn</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+</body>
+</html>
